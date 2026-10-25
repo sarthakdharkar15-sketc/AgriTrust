@@ -1,0 +1,28 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Environment secrets
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Local Caches & Temp files
+.cache/
+.pytest_cache/
+
+# OS and Editor settings
+.vscode/
+.idea/
+Microsoft/
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log

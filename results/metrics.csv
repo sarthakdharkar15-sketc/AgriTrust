@@ -1,0 +1,8 @@
+System,Accuracy,Token_F1,Relevance,Faithfulness,Selective_Accuracy,Coverage,Abstain_Precision,Abstain_Recall,Clarify_Rate,ECE,Consistency
+llm,0.0,0.0553,0.2,0.25,0.0,1.0,0.0,0.0,0.0,0.5,0.84
+rag,0.0,0.0553,0.2,0.85,0.0,1.0,0.0,0.0,0.0,0.7,0.84
+marag,0.0,0.042,0.208,0.85,0.0,1.0,0.0,0.0,0.0,0.8,0.84
+agritrust,0.35,0.0468,0.2024,0.5,0.0,0.0,0.5,1.0,0.0,0.3838,0.875
+agritrust_no_verifier,0.35,0.0468,0.2024,0.5,0.0,0.0,0.5,1.0,0.0,0.3838,0.875
+agritrust_no_agreement,0.35,0.0468,0.2024,0.5,0.0,0.0,0.5,1.0,0.0,0.3838,0.875
+agritrust_no_control,0.0,0.0468,0.2024,0.85,0.0,1.0,0.0,0.0,0.0,0.7338,0.84

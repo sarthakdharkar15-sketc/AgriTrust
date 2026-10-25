@@ -1,0 +1,65 @@
+# AgriTrust System Configuration
+project:
+  name: AgriTrust
+  repo: agritrust-rag
+  package: agritrust
+  version: 0.1.0
+
+llm:
+  provider: mock # gemini | ollama | mock
+  gemini_model: gemini-1.5-flash
+  ollama_model: llama3.2
+  ollama_base_url: http://localhost:11434
+  temperature: 0.2
+  max_retries: 3
+  backoff_factor: 1.5
+  rate_limit_rps: 2.0
+  cache_dir: .cache/llm
+
+embedding:
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  cache_dir: .cache/embeddings
+
+nli_verifier:
+  model_name: cross-encoder/nli-deberta-v3-small
+  cache_dir: .cache/nli
+  entailment_idx: 1
+  neutral_idx: 0
+  contradiction_idx: 2
+
+retrieval:
+  top_k: 5
+  expanded_top_k: 8
+  bm25_weight: 0.5
+  dense_weight: 0.5
+  rrf_k: 60
+  chroma_db_dir: data/index/chroma
+  bm25_index_path: data/index/bm25.pkl
+  metadata_index_path: data/index/chunks_metadata.json
+
+trust:
+  weights:
+    w1_ess: 0.40       # Evidence Support Score weight
+    w2_agr: 0.25       # Agent Agreement Score weight
+    w3_retrieval: 0.20 # Mean normalized retrieval score weight
+    w4_self_conf: 0.15 # Mean agent self-confidence weight
+  contradiction_penalty: 0.35
+  tau_high: 0.70
+  tau_low: 0.45
+  min_evidence_coverage: 0.60
+  max_retrieval_retries: 2
+
+corpus:
+  raw_dir: data/raw
+  corpus_dir: data/corpus
+  chunk_size_tokens: 500
+  chunk_overlap_tokens: 80
+  target_crops:
+    - wheat
+    - rice
+    - soybean
+    - cotton
+    - maize
+    - tomato
+    - potato
+    - sugarcane
